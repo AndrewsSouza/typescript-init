@@ -1,0 +1,33 @@
+{
+    "jsRules": {},
+    "rules": { /* https://palantir.github.io/tslint/rules/ */
+        "no-console": false,
+        "curly": false,
+        "triple-equals": true,
+        "indent": [
+            true,
+            "spaces"
+        ],
+        /* "prefer-const": true, -- does not work, e.g., on gl-matrix vec types */
+        "align": false,
+        "no-consecutive-blank-lines": [
+            true,
+            2
+        ],
+        "max-line-length": {
+            "options": [
+                120
+            ]
+        },
+        "whitespace": [
+            true,
+            "check-operator",
+            "check-decl",
+            "check-module",
+            "check-typecast",
+            "check-preblock",
+            "check-type"
+        ]
+    },
+    "rulesDirectory": []
+}

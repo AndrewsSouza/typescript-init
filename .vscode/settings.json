@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.html": "liquid"
+    },
+    "files.insertFinalNewline": true,
+    "editor.cursorBlinking": "solid", // saves performance
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/tests": true
+    }
+}

@@ -1,0 +1,45 @@
+# Site settings
+timezone: Europe/Berlin
+
+baseurl: '' # the subpath of your site, e.g. /blog/
+url: 'https://github.com/cginternals/template.js' # the base hostname & protocol for your site
+
+title: 'template.js'
+author: 'Daniel Limberger'
+
+languages: [ 'en' ]
+
+google_font_sans_serif: 'Source+Sans+Pro:300'
+
+# Handling Reading
+safe: true
+encoding: utf-8
+
+# Build settings
+markdown: kramdown
+
+# Outputting
+exclude: [
+  'Gemfile',
+  'Gemfile.lock',
+  'vendor',
+  '.jekyll-metadata']
+
+keep_files: [
+  'docs/',
+  'test-results/',
+  'template.js',
+  'template.min.js',
+  'template.js.map']
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      lang: en
+      description: 'template.js | A project template for HTML5 applications, using TypeScript, Jekyll, webpack, etc.'
+
+# CSS Minification
+sass:
+  style: compressed
+  

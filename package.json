@@ -1,0 +1,44 @@
+{
+  "name": "template.js",
+  "description": "A project template for HTML5 applications, using TypeScript, Jekyll, webpack, etc.",
+  "version": "0.0.0",
+  "author": "CG Internals",
+  "contributors": [
+    {
+      "name": "Daniel Limberger",
+      "email": "limberger@cginternals.com"
+    }
+  ],
+  "devDependencies": {
+    "@types/gl-matrix": "2.2.34",
+    "@types/jasmine": "2.5.47",
+    "es6-shim": "0.35.3",
+    "jasmine": "2.5.3",
+    "karma": "1.6.0",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-jasmine": "1.1.0",
+    "karma-junit-reporter": "1.2.0",
+    "karma-phantomjs-launcher": "1.0.4",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "2.0.3",
+    "ts-loader": "1.3.3",
+    "tslint": "5.1.0",
+    "typedoc": "0.5.10",
+    "typescript": "2.3.0",
+    "webpack": "2.3.3",
+    "webpack-glsl-loader": "1.0.1"
+  },
+  "dependencies": {
+    "gl-matrix": "2.3.2"
+  },
+  "scripts": {
+    "check": "tslint \"source/**/*.ts\" --force --format stylish --config tslint.json",
+    "test": "karma start",
+    "build": "webpack",
+    "build-min": "webpack --config webpack.config.min.js",
+    "doc": "typedoc --hideGenerator --readme README.md --target ES5 --module commonjs --mode file --out dist/doc/ source/",
+    "client": "jekyll build --source client --destination dist/",
+    "client-watch": "jekyll build --source client --destination dist/ --watch --incremental",
+    "deploy": "npm run check && npm run test && npm run build && npm run build-min && npm run doc && npm run client"
+  }
+}
