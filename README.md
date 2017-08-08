@@ -1,5 +1,5 @@
 
-*template.js* is a ...
+*typescript-init* is a ...
 
 
 ## Getting Started
