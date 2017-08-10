@@ -85,4 +85,4 @@ The following topics will be discussed briefly as soon as possible:
 * [ES6 Modules](http://www.2ality.com/2014/09/es6-modules-final.html)
 * [Webpack 2.2](https://webpack.js.org/configuration/)
 * [TypeScript](https://www.typescriptlang.org/docs/tutorial.html)
-* [TypeScript Coding Guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines) -->
+* [TypeScript Coding Guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines)
