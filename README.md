@@ -50,9 +50,11 @@ Before you start modifying your project, verify that everything works out of the
 
 This should install all required node packages (see ```devDependencies``` in ```package.json```) for the project in ```ts-init/node_modules```.
 
-* Finally, run ```npm run-script deploy``` (this can also be done using the Run-Task command in vs code, more later).
+* Run ```npm run-script deploy``` (this can also be done using the Run-Task command in vs code, more later).
 
 This command triggers a sequence of commands (see ```scripts``` in ```package.json```) for a full deployment into the ```ts-init/dist``` folder containing a transpiled and bundled JavaScript library, a static website, some test-results, and the source code documentation including this readme.
+
+* Finally, run ```.\dist\fiblib.html``` in the integrated terminal to view the static, generated example website using the transpiled TypeScript library fiblib.js.
 
 
 ### Modify
