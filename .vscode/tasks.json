@@ -9,7 +9,7 @@
     "echoCommand": true,
     "tasks": [
         {
-            "taskName": "update",
+            "taskName": "update packages",
             "args": [
                 "update"
             ]
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "taskName": "build-min",
+            "taskName": "build (minify)",
             "isBuildCommand": true,
             "args": [
                 "run",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "taskName": "deploy",
+            "taskName": "deploy all",
             "isBuildCommand": true,
             "args": [
                 "run",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "taskName": "check",
+            "taskName": "check sources",
             "isTestCommand": true,
             "args": [
                 "run",
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "taskName": "test",
+            "taskName": "run tests",
             "isTestCommand": true,
             "args": [
                 "run",
@@ -55,7 +55,15 @@
             ]
         },
         {
-            "taskName": "doc",
+            "taskName": "run tests (watch and debug)",
+            "isTestCommand": true,
+            "args": [
+                "run",
+                "test-watch-and-debug"
+            ]
+        },
+        {
+            "taskName": "generate doc",
             "isBuildCommand": true,
             "args": [
                 "run",
@@ -63,7 +71,7 @@
             ]
         },
         {
-            "taskName": "client",
+            "taskName": "build client",
             "isBuildCommand": true,
             "args": [
                 "run",
@@ -71,7 +79,7 @@
             ]
         },
         {
-            "taskName": "client-watch",
+            "taskName": "build client (watch)",
             "isBuildCommand": true,
             "args": [
                 "run",

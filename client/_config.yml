@@ -2,9 +2,9 @@
 timezone: Europe/Berlin
 
 baseurl: '' # the subpath of your site, e.g. /blog/
-url: 'https://github.com/cginternals/template.js' # the base hostname & protocol for your site
+url: 'https://github.com/cginternals/typescript-init' # the base hostname & protocol for your site
 
-title: 'template.js'
+title: 'fiblib'
 author: 'Daniel Limberger'
 
 languages: [ 'en' ]
@@ -26,18 +26,11 @@ exclude: [
   '.jekyll-metadata']
 
 keep_files: [
-  'docs/',
-  'test-results/',
-  'template.js',
-  'template.min.js',
-  'template.js.map']
-
-defaults:
-  - scope:
-      path: ''
-    values:
-      lang: en
-      description: 'template.js | A project template for HTML5 applications, using TypeScript, Jekyll, webpack, etc.'
+  'doc',
+  'test-results',
+  'js/fiblib.js',
+  'js/fiblib.min.js',
+  'js/fiblib.js.map']
 
 # CSS Minification
 sass:

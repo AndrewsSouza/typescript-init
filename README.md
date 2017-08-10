@@ -1,98 +1,87 @@
+# typescript-init
 
-*typescript-init* is a ...
+A template for creating typescript libraries (and generate static websites) optimized for development in [Visual Studio Code](https://code.visualstudio.com/).
 
+This project is inteneded as a 'minimal' copy and paste setup covering
 
-## Getting Started
+* transpiling and bundling of TypeScript libraries using [webpack and TypeScript](https://webpack.js.org/guides/webpack-and-typescript/),
+* unit testing and reporting, e.g., coverage, using [Karma](http://karma-runner.github.io/1.0/index.html) and [Jasmine](https://jasmine.github.io/),
+* template-based generation of static websites using [Jekyll](http://jekyllrb.com/),
+* analyizing the source code using [TSLint](https://palantir.github.io/tslint/),
+* generating documentation from source code and markdown files using [TypeDoc](https://github.com/TypeStrong/typedoc),
+* as well as various workflow tweaks facilitating development performance.
 
-The ... can be integrated into HTML5 as follows:
-```
-<canvas id="foo" data-foo-bar="true">
-    <!-- fallback -->
-    Your browser does <strong>not support</strong> the <code>&lt;canvas&gt;</code> element.
-</canvas>
-```
-
-This canvas can then be setup by ... using JavaScript as follows:
-```
-canvas = new Template.SomeClass("foo");
-...
-```
-
-For canvas configuration the following data-attributes can be used:
-
-| data attribute | description |
-|----------------|-------------|
-| ```data-foo-bar="{flag}"``` | ```{boolean}``` true for ..., false otherwise |
+Even though this template is intended to be as minimal as required it is quite complex (especially for TypeScript beginner). Hence, we strongly advise to **carefully read this README**.
 
 
-## Dependencies
+## Quickstart | Prepare, Copy and Paste, Verify, then Modify
 
-template.js has the following non-dev dependencies:
+### Prepare
 
-* [```gl-matrix```](http://glmatrix.net/) is a Javascript matrix and vector library for high performance WebGL apps (MIT license).
+This project is optimized with the following environment in mind:
 
+* version control system: [git](https://git-scm.com/) - [download](https://git-scm.com/downloads)
+* code editor: [Visual Studio Code](https://code.visualstudio.com/) - [download](https://code.visualstudio.com/Download)
+* JavaScript runtime: (Node.js)[https://nodejs.org/en/] - [download](https://nodejs.org/en/download/), prefer [installation via chocolatey on windows](https://chocolatey.org/packages/nodejs)
+* static website generator (optional): [Jekyll](http://jekyllrb.com/) - [installation](https://jekyllrb.com/docs/installation/), prefer [installation via chocolatey on windows](https://jekyllrb.com/docs/windows/#installation-via-chocolatey)
 
-## Source Structure
-
-| directory | description |
-|-------------------|-------------|
-| ```source``` | 'public' interface of template.js: classes required for integrating this library into an app, e.g., ... |
-| ```source/core``` | provides mainly the ... workflow and all ... related, non specialized classes. | 
-| ```source/shaders``` | this directory contains all shaders. On build, the shaders are packed into the dist as well (and includes are resolved). |
-| ```source/...``` | all specialized ... are located here. |
-| ```source/tests``` | in this directory all tests are located. |
+All following steps expect git, vs code, node, and (optional) jekyll to work. 
+You can verify this by opening an integrated terminal in vs code and run the commands ```git --version```, ```node --version```, and ```jekyll --version``` (optional). Each should print out the currently installed version.
 
 
-## NPM configuration
+### Copy and Paste
 
-The following scripts are defined within the ```package.json``` package configuration.
+Create a local folder, e.g., ```ts-init```, with a copy of this repository's source code (clone, download, fork, ...).
 
-| npm command | description |
-|-------------|-------------|
-| ```npm run build```        | pack distribution [webpack and TypeScript](https://webpack.js.org/guides/webpack-and-typescript/) |
-| ```npm run build-min```    | pack minimal distribution |
-| ```npm run check```        | code quality check [TSLint Rules](https://palantir.github.io/tslint/rules/) : ```tslint.json``` |
-| ```npm run doc```          | generates the documentation in docs using [TypeDoc](https://github.com/TypeStrong/typedoc) |
-| ```npm run test```         | unit tests using [Jasmine](https://jasmine.github.io/) and [Karma](http://karma-runner.github.io/1.0/index.html) : ```karma.config.js``` |
-| ```npm run client```       | generates the client in dist using [Jekyll](https://jekyllrb.com/) : ```client/_config.yml``` |
-| ```npm run client-watch``` | starts a process that watches the client folder and builds on change |
-| ```npm run deploy```       | full deploy sequence: ```check```, ```test```, ```build```, ```build-min```, ```doc```, and ```client``` |
+We suggest to install a set of recommended extensions when working with this template (see ```.vscode/extensions.json```). For it
 
-The above commands can be triggered directly from within a console of course (e.g., from within the Visual Studio Code terminal).
+* open your project folder in vs code,
+* open the extensions panel in vs code,
+* via the 'more' menu (button with three dots in the top right) trigger ```Show Workspace Recommended Extensions```,
+* install all of the listed extensions and reload vs code.
 
 
-## Deployment 
+### Verify
 
-For deployment adhere to the following sequence:
+Before you start modifying your project, verify that everything works out of the box:
 
-* first ```npm update``` should be run,
-* then, ```npm run deploy``` should be run.
+* open your project folder in vs code,
+* open an integrated terminal and run ```npm install```.
 
+This should install all required node packages (see ```devDependencies``` in ```package.json```) for the project in ```ts-init/node_modules```.
 
-## Visual Studio Code configuration
+* Finally, run ```npm run-script deploy``` (this can also be done using the Run-Task command in vs code, more later).
 
-"[Visual Studio Code](https://code.visualstudio.com/) is a code editor redefined and optimized for building and debugging modern web and cloud applications." 
-Please not that the workspace configuration ```.vscode/settings.json``` has automatic format on save enabled.
-
-#### tasks
-
-All the above scripts, namely ```build, build-min, check, doc, test, client, client-watch, deploy``` as well as ```update``` (```npm update```) can be triggered from within Visual Studio Code.
-The intended workflow is to bind a key (e.g., ctrl+alt+t) to open the task selection and trigger the desired task.
-The tasks are configured in ```.vscode/tasks.json```.
-
-#### launch
-
-Two launch configurations for debugging from within Visual Studio Code are configured in ```.vscode/launch.json```:
-
-* The ```Launch Example``` configuration opens the ```dist/example.html``` in a new Chrome tab.
-* The ```Attach Example``` configuration attaches to an existing Chrome tab having the ```dist/example.html``` openend and enables debugging from within Visual Studio Code.
+This command triggers a sequence of commands (see ```scripts``` in ```package.json```) for a full deployment into the ```ts-init/dist``` folder containing a transpiled and bundled JavaScript library, a static website, some test-results, and the source code documentation including this readme.
 
 
-## Related Work
+### Modify
+
+General note: start with something that works (e.g., previous step), and customize, modify, and extend this template iteratively in as tiny steps as possible.
+
+If you prefer long debugging sessions by means of trial and error, and like to procrastinate by reading hundreds of forums, blogs, and manuals for days and weeks, you should skip the following documentation covering some aspects of this template's configuration. If not, be reminded that this documentation cannot and is not intended to fully mitigate the overhead that comes with npm, node, ... :P
+
+
+# ToDo
+
+The following topics will be discussed briefly as soon as possible:
+
+* jekyll config / deploy - website file names
+* loading data at transpile time using require
+* remarks on tslint and source code analysis
+* remarks on tsconfig
+* remarks on the actual example fiblib
+* remarks on testing and unit as well as coverage reports
+* overal project structure - client, dist, source, test (replicate source etc..)
+* using keybindings and tasks -> tasks.json
+* starting and debugging the library/websites using chrome
+* ...
+
+
+## Related Work and Resources
 
 * [ES6 Specification](http://www.ecma-international.org/ecma-262/6.0/)
 * [ES6 Modules](http://www.2ality.com/2014/09/es6-modules-final.html)
-* [WebGL Stats](http://webglstats.com/)
 * [Webpack 2.2](https://webpack.js.org/configuration/)
 * [TypeScript](https://www.typescriptlang.org/docs/tutorial.html)
-* [TypeScript Coding Guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines)
+* [TypeScript Coding Guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines) -->

@@ -7,13 +7,13 @@ module.exports =
         context: __dirname + '/source',
         cache: false,
         entry: {
-            main: ['./require.ts', './template.ts']
+            main: ['./require.ts', './fiblib.ts']
         },
 
         output: {
             path: __dirname + '/dist/js',
-            filename: 'template.js',
-            library: 'Template',
+            filename: 'fiblib.js',
+            library: 'fiblib',
         },
 
         resolve: {
@@ -24,12 +24,12 @@ module.exports =
         module: {
             rules: [
                 {
-                    test: /\.ts(x?)$/,
-                    exclude: [/node_modules/, 'tests'],
-                    use: [{ loader: 'ts-loader' }]
-                },
-                { test: /(\.glsl|\.vert|\.frag)$/, use: { loader: 'webpack-glsl-loader' } }]
+                    test: /\.tsx?$/,
+                    include: /(source)/,
+                    exclude: /(node_modules|source\/tests)/,
+                    use: { loader: 'ts-loader' }
+                }]
         },
         plugins: [],
-        devtool: 'source-map',
+        devtool: 'sourcemap',
     };

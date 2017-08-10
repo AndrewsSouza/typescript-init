@@ -1,0 +1,43 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+
+// variables override
+
+$enable-rounded: false;
+$enable-transitions: false !default;
+
+
+// Reassign color vars to semantic color scheme
+$brand-primary: #ec008c !default;
+/*$brand-success:             $green !default;
+$brand-info:                $teal !default;
+$brand-warning:             $orange !default;
+$brand-danger:              $red !default;
+$brand-inverse:             $gray-dark !default;
+*/
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-monospace: 'Source Code Pro', monospace;
+
+$headings-font-weight: 100;
+$display4-weight:     700;
+
+// Settings for the `<body>` element.
+//$body-bg:       #eaebeb !default;
+$body-bg:       #f2f6f8 !default;
+$body-color:    #333333 !default;
+
+$link-hover-decoration: none;
+
+@import "bootstrap-custom";
+@import "fontello";
+
+#fiblib {
+  background-color: $body-bg;
+}
+
+header {
+  margin-top: 4em;
+}

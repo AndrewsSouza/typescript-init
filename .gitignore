@@ -3,3 +3,4 @@ dist/
 client/_site
 client/.sass-cache
 client/.jekyll-metadata
+package-lock.json

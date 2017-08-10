@@ -9,7 +9,11 @@
     "search.exclude": {
         "**/.git": true,
         "**/node_modules": true,
-        "**/dist": true,
-        "**/tests": true
+        "**/dist": true
+    },
+    "files.exclude": {
+        "**/.git": true, // this is a default value
+        "**/node_modules": true, // this excludes all folders 
+        "node_modules": true
     }
 }

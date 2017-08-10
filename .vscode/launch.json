@@ -5,23 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Example",
             "type": "chrome",
-            "runtimeExecutable": "chromium-browser",
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ],
             "request": "launch",
-            "sourceMaps": true,
-            "file": "${workspaceRoot}/dist/example.html"
+            "preLaunchTask": "build",
+            "name": "Launch",
+            "url": "${workspaceRoot}/dist/fiblib.html",
+            "webRoot": "${workspaceRoot}"
         },
         {
-            "name": "Attach Example",
             "type": "chrome",
-            "runtimeExecutable": "chromium-browser",
             "request": "attach",
+            "name": "Attach",
             "port": 9222,
-            "url": "${workspaceRoot}/dist/example.html",
+            "file": "${workspaceRoot}/dist/fiblib.html",
             "webRoot": "${workspaceRoot}"
         }
     ]

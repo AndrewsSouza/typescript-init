@@ -1,0 +1,32 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+{% include head.html %}
+
+<body>
+
+<section id="header" class="container">
+    {% include header.html %}
+</section>
+
+<section id="sequence" class="container">
+    
+  <div class="row mt-3">
+    <div class="col">
+      <pre id="sequence"></pre>
+    </div>
+  </div>
+
+</section>
+
+{% include scripts.html %}
+
+<script src="js/fiblib-showcase.js"></script> 
+
+</body>
+
+</html>

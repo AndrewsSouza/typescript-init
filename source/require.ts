@@ -1,6 +1,7 @@
+
 /**
  * Declaration of the require function for TypeScript
- * 
+ *
  * Adapted from https://github.com/TypeStrong/ts-loader
  */
 declare var require: {
