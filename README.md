@@ -75,7 +75,8 @@ The following topics will be discussed briefly as soon as possible:
 * overal project structure - client, dist, source, test (replicate source etc..)
 * using keybindings and tasks -> tasks.json
 * starting and debugging the library/websites using chrome
-* ...
+* briefly talk about use of bootstrap in this example
+* remarks on cspell, spellchecking
 
 
 ## Related Work and Resources
