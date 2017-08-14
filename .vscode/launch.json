@@ -7,18 +7,46 @@
         {
             "type": "chrome",
             "request": "launch",
+            "trace": true,
             "preLaunchTask": "build",
             "name": "Launch",
+            "disableNetworkCache": true,
+            "timeout": 1000,
             "url": "${workspaceRoot}/dist/fiblib.html",
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/dist",
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${webRoot}/../node_modules/*",
+                "webpack:///./*": "${webRoot}/../source/*"
+            },
+            "windows": {
+                "url": "${workspaceRoot}\\dist\\fiblib.html",
+                "webRoot": "${workspaceRoot}\\dist",
+                "sourceMapPathOverrides": {
+                    "webpack:///./~/*": "${webRoot}\\..\\node_modules\\*",
+                    "webpack:///./*": "${webRoot}\\..\\source\\*"
+                }
+            }
         },
         {
             "type": "chrome",
             "request": "attach",
             "name": "Attach",
-            "port": 9222,
-            "file": "${workspaceRoot}/dist/fiblib.html",
-            "webRoot": "${workspaceRoot}"
+            "disableNetworkCache": true,
+            "timeout": 1000,
+            "url": "${workspaceRoot}/dist/fiblib.html",
+            "webRoot": "${workspaceRoot}/dist",
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${webRoot}/../node_modules/*",
+                "webpack:///./*": "${webRoot}/../source/*"
+            },
+            "windows": {
+                "url": "${workspaceRoot}\\dist\\fiblib.html",
+                "webRoot": "${workspaceRoot}\\dist",
+                "sourceMapPathOverrides": {
+                    "webpack:///./~/*": "${webRoot}\\..\\node_modules\\*",
+                    "webpack:///./*": "${webRoot}\\..\\source\\*"
+                }
+            }
         }
     ]
 }
